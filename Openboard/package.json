@@ -2,11 +2,16 @@
   "name": "openboard",
   "version": "1.0.0",
   "main": "app.js",
+  "engines": {
+    "node":"14.17.6",
+    "npm":"6.14.15"
+  },
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node app.js"
   },
   "author": "",
   "license": "ISC",
