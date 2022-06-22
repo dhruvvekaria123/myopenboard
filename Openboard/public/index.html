@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- <div class="sticky-note">
+        <div class="header">
+            <div class="minimize"></div>
+            <div class="close"></div>
+        </div>
+        <div class="content">
+            <textarea></textarea>
+        </div>
+    </div> -->
+
+    <div class="sizeSetter">
+        <div class="size-circle">
+            <div class="size1 size select"></div>
+            <div class="size2 size "></div>
+            <div class="size3 size "></div>
+            <div class="size4 size "></div>
+        </div>
+
+        <div class="color-circle">
+            <div class="row-1">
+                <div class="color black select"></div>
+                <div class="color red "></div>
+                <div class="color green"></div>
+                <div class="color yellow"></div>
+            </div>
+            <div class="row-2">
+                <div class="color pink"></div>
+                <div class="color white "></div>
+                <div class="color blue"></div>
+                <div class="color purple "></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="eraserSetter" id="check">
+        <div class="size-circle">
+            <div class="size1 size select"></div>
+            <div class="size2 size "></div>
+            <div class="size3 size "></div>
+            <div class="size4 size "></div>
+        </div>
+    </div>
+    <!-- <div class="mode-switch">
+        <div class="outer-light">
+            <img src="./icons/light-mode.png" class = "light-mode">
+        </div>
+        <div class="outer-dark">
+            <img src="./icons/night-mode.png" class = "dark-mode">
+        </div>
+    </div> -->
+    <div class="outer">
+        <div class="tool-bar">
+            <div id="pencil" size = "1.5">
+                <img src="./icons/Black_Pencil.svg" class="tool-img">
+            </div>
+            <div id="eraser" size = "5">
+                <img src="./icons/Eraser.svg" class="tool-img">
+            </div>
+            <div id="download">
+                <img src="./icons/Download.svg" class="tool-img">
+            </div>
+            <div id="upload">
+                <img src="./icons/Upload.svg" class="tool-img">
+            </div>
+            <div id="notes">
+                <img src="./icons/StickyNote.svg" class="tool-img">
+            </div>
+            <div id="redo">
+                <img src="./icons/Redo.svg" class="tool-img">
+            </div>
+            <div id="undo">
+                <img src="./icons/Undo.svg" class="tool-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="ide">
+        <div class="control-panel">
+            Select Language:
+            &nbsp; &nbsp;
+            <select id = "languages" class="languages">
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+            </select>
+            <div class = "minimize-maximize"></div>  
+        </div>
+        <div class="editor" id="editor"></div>
+        <div class="button-container">
+            <div class="btn">Run</div>
+        </div>
+        <div class="output"></div>
+
+    </div>
+    <canvas class="canvas" ></canvas>
+</body>
+
+
+
+<!-- html js inject-->
+
+
+<!-- for editor -->
+<script defer src="./lib/ace.js"></script>
+<script defer src="./lib/theme-monokai.js"></script>
+<script src="ide.js"></script>
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- for real time -->
+
+<script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+<script>
+    let socket = io.connect("http://localhost:5000");
+</script>
+<script src="script.js"></script>
+
+</html>
